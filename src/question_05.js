@@ -35,6 +35,17 @@ const employees = [{
     salary: 90000,
 }];
 
-//Q1 : averageDeveloperSalary
+//Q2:  averageNonDeveloperSalary
 
-//Q2: averageNonDeveloperSalary
+const developers = employees.filter(emp=> emp.jobTitle !== 'developer');
+console.log('developers', developers);
+const developerSalaries = developers.map( dev => dev.salary);
+console.log('developerSalaries', developerSalaries);
+
+const totalDevelopersSalaries = developerSalaries.reduce( (acc, x) =>  acc+ x, 0 );
+console.log('totalDevelopersSalaries', totalDevelopersSalaries);
+const averageDeveloperSalary = totalDevelopersSalaries/developers.length;
+
+console.log(averageDeveloperSalary);
+
+
